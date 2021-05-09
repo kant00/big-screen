@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>大屏可视化项目</title>
+  <script>
+    const device_width=document.documentElement.clientWidth;
+    const device_height=document.documentElement.clientHeight;
+    window.page_width= device_width/device_height>16/9 ? device_height*(16/9) : device_width;
+    const page_height=page_width/(16/9);
+    const string=`<style>
+    html{
+      font-size:${page_width/100}px
+    }</style>`;
+    document.write(string);
+  </script>
+<script type="module" crossorigin src="./assets/index.fdfa28cd.js"></script>
+  <link rel="modulepreload" href="./assets/vendor.e16c7891.js">
+  <link rel="stylesheet" href="./assets/index.183215ea.css">
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const root=document.querySelector("#root");
+  //root.style.width=page_width + 'px';
+  root.style.height=page_height + 'px';
+  root.style.marginTop=(device_height-page_height)/2 + 'px'
+</script>
+
+</body>
+</html>
